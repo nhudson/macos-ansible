@@ -1,0 +1,36 @@
+---
+- hosts: localhost
+  connection: local
+  gather_facts: true
+
+  vars_files:
+    - default.config.yaml
+
+  pre_tasks:
+    - name: Include playbook configuration.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yaml"
+      tags: ["always"]
+
+  roles:
+    - role: elliotweiser.osx-command-line-tools
+      tags: ["osxcmd"]
+    - role: geerlingguy.mac.homebrew
+      tags: ["homebrew"]
+    - role: ansible-role-pip
+      tags: ["pip"]
+    # - role: geerlingguy.mac.mas
+    #  tags: ["mas"]
+
+  tasks:
+    - import_tasks: tasks/sudoers.yaml
+      when: configure_sudoers
+      tags: ["sudoers"]
+    - import_tasks: tasks/sethostname.yaml
+      when: configure_hostname
+    - import_tasks: tasks/osx.yaml
+    - import_tasks: tasks/binaries.yaml
+
+  handlers:
+    - import_tasks: handlers/flushdns.yaml

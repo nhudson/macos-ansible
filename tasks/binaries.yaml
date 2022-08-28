@@ -1,0 +1,17 @@
+---
+- name: Ensure ~/.shell exists
+  file:
+    path: ~/.shell
+    state: directory
+
+- name: Install forgit
+  git:
+    clone: true
+    repo: https://github.com/wfxr/forgit.git
+    dest: ~/.shell/forgit
+
+- name: Clone NeoVim config
+  git:
+    clone: true
+    repo: https://github.com/nhudson/vimrc.git
+    dest: ~/.config/nvim

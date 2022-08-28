@@ -1,0 +1,6 @@
+---
+- name: Set macOS HostName.
+  include_tasks: "hostname.yaml"
+  when:
+    - "osx_hostname is defined"
+    - "osx_hostname | length > 0"

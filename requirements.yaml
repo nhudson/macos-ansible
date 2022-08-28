@@ -1,0 +1,10 @@
+---
+roles:
+  - name: elliotweiser.osx-command-line-tools
+  - name: ansible-role-pip
+    src: https://github.com/Allaman/ansible-role-pip.git
+    scm: git
+    version: main
+
+collections:
+  - name: geerlingguy.mac

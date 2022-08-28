@@ -1,0 +1,198 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_hostname: true
+osx_hostname: omicron
+
+configure_osx: true
+
+osx_script: ./files/osx.sh
+
+configure_sudoers: true
+sudoers_custom_config: |
+  # Allow users in admin group to use sudo with no password.
+  nhudson ALL=(ALL) NOPASSWD: ALL
+
+mas_installed_apps: []
+mas_uninstalled_apps:
+  - { id: 408981434, name: "iMovie" }
+  - { id: 409183694, name: "Keynote" }
+  - { id: 409201541, name: "Pages" }
+  - { id: 409203825, name: "Numbers" }
+
+homebrew_installed_packages:
+  # - ansible # installed via pip
+  - ansible-lint
+  - awscli
+  - bat
+  - black
+  - btop
+  - chart-testing
+  - cmake
+  - coredns
+  - cue-lang/tap/cue
+  - eslint
+  - etcd
+  - exa
+  - fd
+  - flake8
+  - fluxcd/tap/flux
+  - fzf
+  - gh
+  - git
+  - gnu-sed
+  - gnupg
+  - go
+  - haproxy
+  - helm
+  - hugo
+  - jq
+  - just
+  - kind
+  - kubectx
+  - kubeseal
+  - latexindent
+  - libtermkey
+  - lua-language-server
+  - luajit
+  - luajit-openresty
+  - luarocks
+  - luv
+  - markdownlint-cli
+  - mas
+  - msgpack
+  - neofetch
+  - norwoodj/tap/helm-docs
+  - pinentry-mac
+  - postgresql
+  - prettier
+  - python@3.9
+  - ranger
+  - ripgrep
+  - romkatv/powerlevel10k/powerlevel10k
+  - sk
+  - stylua
+  - terraform
+  - terraform-lsp
+  - tree-sitter
+  - vale
+  - velero
+  - wget
+  - yaml-language-server
+  - yamllint
+  - yarn
+  - yq
+  - zsh
+  - zsh-fast-syntax-highlighting
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+  - homebrew/cask-fonts
+  - armosec/kubescape
+  - cue-lang/tap
+  - fluxcd/tap
+  - github/gh
+  - homebrew/cask-fonts
+  - homebrew/cask-versions
+  - homebrew/core
+  - homebrew/services
+  - norwoodj/tap
+  - romkatv/powerlevel10k
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - google-chrome
+  - firefox
+  - slack
+  - kitty
+  - discord-canary
+  - font-3270-nerd-font
+  - font-agave-nerd-font
+  - font-anonymice-nerd-font
+  - font-arimo-nerd-font
+  - font-aurulent-sans-mono-nerd-font
+  - font-bigblue-terminal-nerd-font
+  - font-bitstream-vera-sans-mono-nerd-font
+  - font-blex-mono-nerd-font
+  - font-caskaydia-cove-nerd-font
+  - font-code-new-roman-nerd-font
+  - font-cousine-nerd-font
+  - font-daddy-time-mono-nerd-font
+  - font-dejavu-sans-mono-nerd-font
+  - font-droid-sans-mono-nerd-font
+  - font-fantasque-sans-mono-nerd-font
+  - font-fira-code-nerd-font
+  - font-fira-mono-nerd-font
+  - font-go-mono-nerd-font
+  - font-gohufont-nerd-font
+  - font-hack-nerd-font
+  - font-hasklug-nerd-font
+  - font-heavy-data-nerd-font
+  - font-hurmit-nerd-font
+  - font-im-writing-nerd-font
+  - font-inconsolata-go-nerd-font
+  - font-inconsolata-lgc-nerd-font
+  - font-inconsolata-nerd-font
+  - font-iosevka-nerd-font
+  - font-jetbrains-mono-nerd-font
+  - font-lekton-nerd-font
+  - font-liberation-nerd-font
+  - font-meslo-lg-nerd-font
+  - font-monofur-nerd-font
+  - font-monoid-nerd-font
+  - font-mononoki-nerd-font
+  - font-mplus-nerd-font
+  - font-noto-nerd-font
+  - font-open-dyslexic-nerd-font
+  - font-overpass-nerd-font
+  - font-profont-nerd-font
+  - font-proggy-clean-tt-nerd-font
+  - font-roboto-mono-nerd-font
+  - font-sauce-code-pro-nerd-font
+  - font-shure-tech-mono-nerd-font
+  - font-space-mono-nerd-font
+  - font-terminess-ttf-nerd-font
+  - font-tinos-nerd-font
+  - font-ubuntu-mono-nerd-font
+  - font-ubuntu-nerd-font
+  - font-victor-mono-nerd-font
+  - gitify
+  - zoom
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+composer_packages: []
+# - name: drush
+#   state: present # present/absent, default: present
+#   version: "^8.1" # default: N/A
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A
+npm_packages: []
+# - name: webpack
+#   state: present # present/absent/latest, default: present
+#   version: "^2.6" # default: N/A
+pip_packages:
+  - ansible
+  - ansible-core
+  - cffi
+  - cryptography
+  - greenlet
+  - Jinja2
+  - MarkupSafe
+  - msgpack
+  - packaging
+  - pip
+  - pycparser
+  - pyparsing
+  - PyYAML
+  - resolvelib
+  - setuptools
+  - six
+  - wheel
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
