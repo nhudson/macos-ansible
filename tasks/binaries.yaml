@@ -1,17 +1,17 @@
 ---
 - name: Ensure ~/.shell exists
-  file:
+  ansible.builtin.file:
     path: ~/.shell
     state: directory
 
 - name: Install forgit
-  git:
+  ansible.builtin.git:
     clone: true
     repo: https://github.com/wfxr/forgit.git
     dest: ~/.shell/forgit
 
 - name: Clone NeoVim config
-  git:
+  ansible.builtin.git:
     clone: true
-    repo: https://github.com/nhudson/vimrc.git
+    repo: git@github.com:nhudson/vimrc.git
     dest: ~/.config/nvim
