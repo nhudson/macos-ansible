@@ -29,6 +29,7 @@ homebrew_installed_packages:
   - chart-testing
   - cmake
   - coredns
+  - coreutils
   - cue-lang/tap/cue
   - eslint
   - etcd
@@ -42,6 +43,7 @@ homebrew_installed_packages:
   - gnu-sed
   - gnupg
   - go
+  - goreleaser
   - haproxy
   - helm
   - hugo
